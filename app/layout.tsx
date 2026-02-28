@@ -17,10 +17,10 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'audiovibe — Audio Plugins',
+  title: 'Audio Vibe',
   description: 'Precision audio plugins for modern music production. Free tools built for producers.',
   openGraph: {
-    title: 'audiovibe — Audio Plugins',
+    title: 'Audio Vibe',
     description: 'Precision audio plugins for modern music production.',
     type: 'website',
   },

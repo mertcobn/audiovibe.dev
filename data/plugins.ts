@@ -23,7 +23,7 @@ export interface Plugin {
 export const plugins: Plugin[] = [
   {
     id: 'audio-gainer-01',
-    name: 'Audio Gainer',
+    name: 'Gainer',
     version: '1.0.0',
     tagline: 'Clean Utility Gain Plugin',
     description:
@@ -32,23 +32,23 @@ export const plugins: Plugin[] = [
     platforms: ['macOS', 'Windows'],
     free: true,
     status: 'available',
-    downloadUrl: '#',
+    downloadUrl: 'https://github.com/user-attachments/files/25640070/Audio.Gainer.zip',
     releaseDate: '2025',
     image: '/images/img_gainer.png',
   },
   {
     id: 'saturate-01',
     name: 'Saturate',
-    version: '0.9.1',
+    version: '—',
     tagline: 'Harmonic Saturation',
     description:
       'Add warmth, character, and harmonic density to any source. From subtle tape-style coloration to heavy distortion — fully oversampled for alias-free processing.',
     formats: ['VST3', 'AU'],
     platforms: ['macOS', 'Windows'],
     free: true,
-    status: 'beta',
-    downloadUrl: '#',
-    releaseDate: '2024',
+    status: 'coming-soon',
+    releaseDate: '2025',
+    image: '/images/img_saturation.png',
   },
   {
     id: 'compress-01',
@@ -59,22 +59,9 @@ export const plugins: Plugin[] = [
       'A clean, no-frills compressor built for precise dynamic range management. Zero coloration, full transparency — control without character.',
     formats: ['VST3', 'AU', 'AAX'],
     platforms: ['macOS', 'Windows'],
-    free: false,
+    free: true,
     status: 'coming-soon',
     releaseDate: '2025',
     image: '/images/img_compressor.png',
-  },
-  {
-    id: 'lorem-01',
-    name: 'Lorem Plugin',
-    version: '—',
-    tagline: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    formats: ['VST3', 'AU'],
-    platforms: ['macOS', 'Windows'],
-    free: false,
-    status: 'coming-soon',
-    releaseDate: '2025',
   },
 ]
