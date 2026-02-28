@@ -720,8 +720,9 @@ img {
   }
 
   .btn {
-    width: 100%;
+    width: 65%;
     justify-content: center;
+    align-self: center;
   }
 
   .btn--ghost {
