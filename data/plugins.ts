@@ -57,7 +57,7 @@ export const plugins: Plugin[] = [
     tagline: 'Transparent Broadband Compressor',
     description:
       'A clean, no-frills compressor built for precise dynamic range management. Zero coloration, full transparency — control without character.',
-    formats: ['VST3', 'AU', 'AAX'],
+    formats: ['VST3', 'AU'],
     platforms: ['macOS', 'Windows'],
     free: true,
     status: 'coming-soon',
