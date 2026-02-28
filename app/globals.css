@@ -1,0 +1,779 @@
+/* ============================================================
+   AUDIOVIBE — Global Styles
+   Theme: Dark Monochrome | Inter 200/300/400
+   Mobile-first | iPhone safe area aware
+   ============================================================ */
+
+:root {
+  --bg: #1a1a1a;
+  --panel: #141414;
+  --border: #2a2a2a;
+  --text: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.4);
+  --btn-border: rgba(255, 255, 255, 0.3);
+  --btn-border-hover: rgba(255, 255, 255, 0.8);
+  --card-border-hover: rgba(255, 255, 255, 0.15);
+  --divider: rgba(255, 255, 255, 0.15);
+  --transition: 0.2s ease;
+  --max-width: 1280px;
+  --px: 56px;                  /* Desktop padding */
+  --px-mobile: 20px;           /* Mobile padding */
+  --navbar-height: 64px;
+}
+
+/* ============ RESET ============ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============ BASE ============ */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* iOS metin boyutu otomatik büyümesini engelle */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* iOS'ta tap highlight kaldır */
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* Dokunma alanı iyileştirme */
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============ LAYOUT ============ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  /* iPhone landscape safe area desteği */
+  padding-left: max(var(--px), env(safe-area-inset-left));
+  padding-right: max(var(--px), env(safe-area-inset-right));
+}
+
+/* ============ NAVBAR ============ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  /* iPhone notch (Dynamic Island) için safe area */
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Navbar içindeki container — flex child, mutlaka full width */
+.navbar__container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* iPhone landscape için */
+  padding-left: max(var(--px), env(safe-area-inset-left));
+  padding-right: max(var(--px), env(safe-area-inset-right));
+}
+
+/* Brand — solda, flex-start'ta */
+.navbar__brand {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: opacity var(--transition);
+  flex-shrink: 0;
+  /* letter-spacing trailing space telafisi */
+  margin-right: -0.4em;
+}
+
+.navbar__brand:hover {
+  opacity: 0.7;
+}
+
+/* Desktop nav */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.navbar__link {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  /* Minimum touch target */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link:hover {
+  color: var(--text);
+}
+
+.navbar__link--support {
+  border: 1px solid var(--btn-border);
+  padding: 6px 14px;
+  border-radius: 3px;
+  transition: all var(--transition);
+}
+
+.navbar__link--support:hover {
+  color: var(--text);
+  border-color: var(--btn-border-hover);
+}
+
+/* ============ HAMBURGER BUTONU ============ */
+
+.nav-hamburger {
+  display: none;       /* Desktop'ta gizli */
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nav-hamburger__line {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+
+/* Açık (X) hali */
+.nav-hamburger--open .nav-hamburger__line:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.nav-hamburger--open .nav-hamburger__line:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ============ MOBİL NAV DROPDOWN ============ */
+
+.navbar__mobile-nav {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  /* Notch safe area için sola/sağa padding */
+  padding: 8px max(var(--px-mobile), env(safe-area-inset-left));
+  padding-right: max(var(--px-mobile), env(safe-area-inset-right));
+}
+
+.navbar__mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;         /* Geniş touch target */
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__mobile-nav ul li:last-child .navbar__mobile-link {
+  border-bottom: none;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link:active {
+  color: var(--text);
+}
+
+/* ============ HERO ============ */
+
+.hero {
+  min-height: calc(100svh - var(--navbar-height) - env(safe-area-inset-top));
+  display: flex;
+  align-items: center;
+  padding: 100px 0 80px;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.hero__eyebrow {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.hero__title {
+  font-size: clamp(48px, 9vw, 132px);
+  font-weight: 200;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text);
+  max-width: 900px;
+}
+
+.hero__title em {
+  font-style: normal;
+  color: var(--text-secondary);
+}
+
+.hero__description {
+  max-width: 460px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ============ BUTTON ============ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 30px;
+  height: 48px;            /* Minimum touch target: 44px+ */
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--btn-border);
+  color: var(--text);
+  border-radius: 4px;
+  transition: all var(--transition);
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+  border-color: var(--btn-border-hover);
+}
+
+.btn--ghost {
+  border-color: transparent;
+  color: var(--text-secondary);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn--ghost:hover {
+  border-color: transparent;
+  color: var(--text);
+}
+
+.btn--sm {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+/* ============ SECTION DIVIDER ============ */
+
+.section-divider__line {
+  height: 1px;
+  background: var(--divider);
+  width: 100%;
+}
+
+.section-divider__line + .section-divider__line {
+  margin-top: 9px;
+  width: 85%;
+}
+
+/* ============ SECTION WRAPPER ============ */
+
+.section {
+  padding: 100px 0;
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 64px;
+}
+
+.section__label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.section__title {
+  font-size: clamp(28px, 4.5vw, 60px);
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--text);
+}
+
+/* ============ PLUGINS GRID ============ */
+
+.plugins-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ============ PLUGIN CARD ============ */
+
+.plugin-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: border-color var(--transition);
+}
+
+.plugin-card:hover {
+  border-color: var(--card-border-hover);
+}
+
+/* Görsel container — tüm kartlarda EŞİT yükseklik (220px sabit) */
+.plugin-card__image-wrap {
+  position: relative;
+  width: calc(100% + 64px);    /* card padding'i aşarak kenara tam dayansın */
+  margin: -32px -32px 0;
+  height: 220px;               /* sabit yükseklik → tüm kartlar eşit */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tam görsel — kırpma yok, orijinal oran korunur */
+.plugin-card__image {
+  object-fit: contain !important;   /* cover → contain: tam görsel */
+  object-position: center !important;
+  padding: 16px;                    /* kenarlara nefes payı */
+  transition: transform 0.4s ease;
+}
+
+.plugin-card:hover .plugin-card__image {
+  transform: scale(1.03);
+}
+
+/* Görseli olmayan kartlar için boş placeholder */
+.plugin-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobilde padding daha az, margin'i güncelle */
+@media (max-width: 640px) {
+  .plugin-card__image-wrap {
+    width: calc(100% + 48px);
+    margin: -24px -24px 0;
+    height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .plugin-card__image-wrap {
+    width: calc(100% + 40px);
+    margin: -20px -20px 0;
+    height: 180px;
+  }
+}
+
+.plugin-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plugin-card__name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.plugin-card__name {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.plugin-card__version {
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.plugin-card__tagline {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.plugin-card__description {
+  font-size: 13px;
+  font-weight: 200;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  flex: 1;
+}
+
+.plugin-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  color: var(--text-secondary);
+}
+
+.tag--platform {
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.plugin-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.plugin-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plugin-card__price {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.plugin-card__price--free {
+  color: var(--text);
+}
+
+.badge {
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--btn-border);
+  padding: 3px 8px;
+  border-radius: 2px;
+  color: var(--text-secondary);
+}
+
+.plugin-card__soon {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* ============ ABOUT ============ */
+
+.about__content {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about__text {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.95;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.about__text strong {
+  color: var(--text);
+  font-weight: 300;
+}
+
+.about__links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ============ FOOTER ============ */
+
+.footer {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+  /* iPhone home indicator için safe area */
+  padding-bottom: max(48px, calc(32px + env(safe-area-inset-bottom)));
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__brand {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.footer__copy {
+  font-size: 11px;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.footer__links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.footer__link {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__link:hover {
+  color: var(--text);
+}
+
+/* ============================================================
+   RESPONSIVE
+   Breakpoints: 1024px (tablet) | 640px (mobile/iPhone)
+   ============================================================ */
+
+/* ---- Tablet ---- */
+@media (max-width: 1024px) {
+  :root {
+    --px: 40px;
+  }
+
+  .plugins-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Mobile / iPhone ---- */
+@media (max-width: 640px) {
+  :root {
+    --px: var(--px-mobile);
+  }
+
+  /* Navbar container mobile padding */
+  .navbar__container {
+    padding-left: max(var(--px-mobile), env(safe-area-inset-left));
+    padding-right: max(var(--px-mobile), env(safe-area-inset-right));
+  }
+
+  /* Desktop nav gizle, hamburger göster */
+  .navbar__nav {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 56px 0 64px;
+    min-height: auto;
+  }
+
+  .hero__inner {
+    gap: 32px;
+  }
+
+  .hero__description {
+    font-size: 13px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn--ghost {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  /* Section */
+  .section {
+    padding: 64px 0;
+  }
+
+  .section__header {
+    margin-bottom: 36px;
+  }
+
+  /* Plugin grid — tek sütun */
+  .plugins-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Plugin card */
+  .plugin-card {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  /* Footer */
+  .footer__inner {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    gap: 24px;
+  }
+}
+
+/* ---- iPhone SE (320px) ---- */
+@media (max-width: 360px) {
+  .navbar__brand {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+  }
+
+  .plugin-card {
+    padding: 20px;
+  }
+
+  .hero__title {
+    letter-spacing: 0.01em;
+  }
+}
