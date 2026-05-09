@@ -27,7 +27,7 @@ export const plugins: Plugin[] = [
     version: '1.0.0',
     tagline: 'Clean Utility Gain Plugin',
     description:
-      'A precision gain utility built for producers who need clean, transparent level control. No coloration, no character — just gain.',
+      'A precision gain utility built for producers who need clean, transparent level control. No coloration, no character, just gain.',
     formats: ['VST3', 'AU'],
     platforms: ['macOS', 'Windows'],
     free: true,
@@ -37,12 +37,27 @@ export const plugins: Plugin[] = [
     image: '/images/img_gainer.png',
   },
   {
+    id: 'formant-01',
+    name: 'Formant',
+    version: '1.0.0',
+    tagline: 'Vocal Formant Shifter',
+    description:
+      'Shape and shift vocal character with precision formant control. Reshape timbre without altering pitch, from subtle tonal adjustments to dramatic vocal transformations.',
+    formats: ['VST3', 'AU'],
+    platforms: ['macOS', 'Windows'],
+    free: true,
+    status: 'available',
+    downloadUrl: 'https://github.com/user-attachments/files/27551301/Formant.Shifter.v1.0.0.zip',
+    releaseDate: '2025',
+    image: '/images/img_formant.png',
+  },
+  {
     id: 'saturate-01',
     name: 'Saturate',
-    version: '—',
+    version: '',
     tagline: 'Harmonic Saturation',
     description:
-      'Add warmth, character, and harmonic density to any source. From subtle tape-style coloration to heavy distortion — fully oversampled for alias-free processing.',
+      'Add warmth, character, and harmonic density to any source. From subtle tape-style coloration to heavy distortion, fully oversampled for alias-free processing.',
     formats: ['VST3', 'AU'],
     platforms: ['macOS', 'Windows'],
     free: true,
@@ -53,10 +68,10 @@ export const plugins: Plugin[] = [
   {
     id: 'compress-01',
     name: 'Compress',
-    version: '—',
+    version: '',
     tagline: 'Transparent Broadband Compressor',
     description:
-      'A clean, no-frills compressor built for precise dynamic range management. Zero coloration, full transparency — control without character.',
+      'A clean, no-frills compressor built for precise dynamic range management. Zero coloration, full transparency, control without character.',
     formats: ['VST3', 'AU'],
     platforms: ['macOS', 'Windows'],
     free: true,

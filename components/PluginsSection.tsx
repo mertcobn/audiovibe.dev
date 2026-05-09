@@ -6,7 +6,7 @@ export default function PluginsSection() {
     <section className="section" id="plugins">
       <div className="container">
         <div className="section__header">
-          <p className="section__label">— catalogue</p>
+          <p className="section__label">catalogue</p>
           <h2 className="section__title">Plugins</h2>
         </div>
 

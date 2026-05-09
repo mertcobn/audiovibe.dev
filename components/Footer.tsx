@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="footer__left">
             <span className="footer__brand">audiovibe</span>
             <span className="footer__copy">
-              © {year} — All rights reserved
+              © {year} All rights reserved
             </span>
           </div>
 

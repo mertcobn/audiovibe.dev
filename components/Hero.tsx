@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="hero">
       <div className="container">
         <div className="hero__inner">
-          <p className="hero__eyebrow">audiovibe — audio plugins</p>
+          <p className="hero__eyebrow">audiovibe audio plugins</p>
 
           <h1 className="hero__title">
             Tools for
@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__description">
-            A curated collection of precision audio plugins — built for producers
+            A curated collection of precision audio plugins, built for producers
             who care about quality. Free, open, and always improving.
           </p>
 

@@ -3,7 +3,7 @@ export default function AboutSection() {
     <section className="section" id="about">
       <div className="container">
         <div className="section__header">
-          <p className="section__label">— the maker</p>
+          <p className="section__label">the maker</p>
           <h2 className="section__title">About</h2>
         </div>
 
@@ -11,7 +11,7 @@ export default function AboutSection() {
           <p className="about__text">
             <strong>audiovibe</strong> is a one-person project dedicated to building
             precision audio tools for modern producers. Every plugin is designed with
-            a clear purpose — no bloat, no unnecessary complexity.
+            a clear purpose, no bloat, no unnecessary complexity.
           </p>
 
           <p className="about__text">

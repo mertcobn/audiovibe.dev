@@ -34,7 +34,7 @@ export default function PluginCard({ plugin }: PluginCardProps) {
       <div className="plugin-card__head">
         <div className="plugin-card__name-row">
           <h3 className="plugin-card__name">{name}</h3>
-          {version !== '—' && (
+          {version && (
             <span className="plugin-card__version">v{version}</span>
           )}
         </div>
