@@ -6,8 +6,7 @@ interface PluginCardProps {
 }
 
 export default function PluginCard({ plugin }: PluginCardProps) {
-  const { name, version, tagline, description, formats, platforms, free, status, downloadUrl, image } =
-    plugin
+  const { name, tagline, description, formats, platforms, free, image } = plugin
 
   return (
     <article className="plugin-card">
@@ -32,12 +31,7 @@ export default function PluginCard({ plugin }: PluginCardProps) {
 
       {/* Head */}
       <div className="plugin-card__head">
-        <div className="plugin-card__name-row">
-          <h3 className="plugin-card__name">{name}</h3>
-          {version && (
-            <span className="plugin-card__version">v{version}</span>
-          )}
-        </div>
+        <h3 className="plugin-card__name">{name}</h3>
         <p className="plugin-card__tagline">{tagline}</p>
       </div>
 
@@ -58,26 +52,12 @@ export default function PluginCard({ plugin }: PluginCardProps) {
         ))}
       </div>
 
-      {/* Footer: price + action */}
+      {/* Footer: fiyat + durum (şimdilik hepsi yakında) */}
       <div className="plugin-card__footer">
-        <div className="plugin-card__meta">
-          <span className={`plugin-card__price ${free ? 'plugin-card__price--free' : ''}`}>
-            {free ? 'Free' : 'Paid'}
-          </span>
-          {status === 'beta' && <span className="badge">Beta</span>}
-        </div>
-
-        {status === 'coming-soon' ? (
-          <span className="plugin-card__soon">Coming Soon</span>
-        ) : (
-          <a
-            href={downloadUrl ?? '#'}
-            className="btn btn--sm"
-            download={downloadUrl && !downloadUrl.startsWith('http') ? true : undefined}
-          >
-            Download
-          </a>
-        )}
+        <span className={`plugin-card__price ${free ? 'plugin-card__price--free' : ''}`}>
+          {free ? 'Free' : 'Paid'}
+        </span>
+        <span className="plugin-card__soon">Coming Soon</span>
       </div>
     </article>
   )

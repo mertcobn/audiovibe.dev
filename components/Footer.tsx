@@ -1,3 +1,5 @@
+import { contact, instagramUrl } from '@/data/contact'
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -8,25 +10,27 @@ export default function Footer() {
           <div className="footer__left">
             <span className="footer__brand">audiovibe</span>
             <span className="footer__copy">
-              © {year} All rights reserved
+              © {year} {contact.name}
             </span>
           </div>
 
           <nav className="footer__links" aria-label="Footer navigation">
-            {/* href değerlerini gerçek linklerle güncelle */}
-            <a href="#plugins" className="footer__link">
+            <a href="/plugins" className="footer__link">
               Plugins
             </a>
-            <a href="#about" className="footer__link">
-              About
+            <a href="/cl5" className="footer__link">
+              Yamaha CL5
+            </a>
+            <a href={`mailto:${contact.email}`} className="footer__link">
+              Email
             </a>
             <a
-              href="#"
+              href={instagramUrl}
               className="footer__link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Patreon
+              Instagram
             </a>
           </nav>
         </div>
