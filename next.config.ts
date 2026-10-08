@@ -7,8 +7,9 @@ const CL5 = process.env.CL5_ORIGIN ?? 'https://cl5web.vercel.app' // CL5_ORIGIN:
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
-      { source: '/cl5', destination: `${CL5}/cl5/` },
-      { source: '/cl5/:path*', destination: `${CL5}/cl5/:path*` },
+      // the CL5 project serves its page at its root; the page's files are asked for under /cl5/
+      { source: '/cl5', destination: `${CL5}/` },
+      { source: '/cl5/:path*', destination: `${CL5}/:path*` },
     ]
   },
 }
