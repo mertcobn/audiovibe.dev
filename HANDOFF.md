@@ -27,6 +27,9 @@ Bir sonraki oturum için durum notu. En yeni oturum en üstte.
 
 ## Oturum geçmişi
 
+### 2026-10-08 — dönüşüm 3 (PR #4 birleşti)
+- About'taki "made with AI / vibe coding / adın kaynağı" paragrafı silindi. Mert bu tür açıklama/hikâye cümlelerini istemiyor; metinler kısa ve düz kalsın.
+
 ### 2026-10-08 — dönüşüm 2 (PR #3 birleşti, canlıda görüldü)
 - Soyad kaldırıldı; sekme başlıkları sadece "audiovibe".
 - Hero tek ekrana sığacak şekilde ölçeklendi (1000×510'dan 2560×1300'e, mobil 320×480'den 430×840'a ölçülerek test edildi).
