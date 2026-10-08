@@ -27,6 +27,10 @@ Bir sonraki oturum için durum notu. En yeni oturum en üstte.
 
 ## Oturum geçmişi
 
+### 2026-10-08 — dönüşüm 4 (PR #5 birleşti)
+- Hero başlığındaki gri "TECH" kaldırıldı (Mert: "biri önde biri arkada" görünüyordu); üç satır da beyaz, satır aralığı 1.
+- CL5_Web reposunda: sekme başlığı "CL5 | audiovibe", favicon audiovibe logosu (`public/favicon.svg`). Logo değişirse oradaki kopyayı da güncelle.
+
 ### 2026-10-08 — dönüşüm 3 (PR #4 birleşti)
 - About'taki "made with AI / vibe coding / adın kaynağı" paragrafı silindi. Mert bu tür açıklama/hikâye cümlelerini istemiyor; metinler kısa ve düz kalsın.
 

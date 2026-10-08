@@ -249,16 +249,11 @@ img {
 .hero__title {
   font-size: clamp(36px, min(9vw, 14svh), 132px);
   font-weight: 200;
-  line-height: 0.9;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text);
   max-width: 900px;
-}
-
-.hero__title em {
-  font-style: normal;
-  color: var(--text-secondary);
 }
 
 .hero__description {
