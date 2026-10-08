@@ -1,7 +1,7 @@
 /* İletişim bilgileri — sitedeki tüm e-posta / Instagram linkleri buradan okunur */
 
 export const contact = {
-  name: 'Mert Çoban',
+  name: 'Mert',
   email: 'mertcoban_@outlook.com',
   instagram: 'mertcobnn',
 }

@@ -236,25 +236,18 @@ img {
   min-height: calc(100svh - var(--navbar-height) - env(safe-area-inset-top));
   display: flex;
   align-items: center;
-  padding: 100px 0 80px;
+  /* Hero ekrana tam otursun: boşluklar ve başlık ekran yüksekliğine göre küçülür */
+  padding: clamp(24px, 6svh, 100px) 0 clamp(24px, 5svh, 80px);
 }
 
 .hero__inner {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-}
-
-.hero__eyebrow {
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+  gap: clamp(16px, 4svh, 48px);
 }
 
 .hero__title {
-  font-size: clamp(48px, 9vw, 132px);
+  font-size: clamp(36px, min(9vw, 14svh), 132px);
   font-weight: 200;
   line-height: 0.9;
   letter-spacing: 0.03em;
@@ -349,14 +342,6 @@ img {
   flex-direction: column;
   gap: 14px;
   margin-bottom: 64px;
-}
-
-.section__label {
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
 }
 
 .section__title {
@@ -546,14 +531,6 @@ img {
 
 .project-card:hover {
   border-color: var(--card-border-hover);
-}
-
-.project-card__label {
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
 }
 
 .project-card__name {
@@ -760,13 +737,8 @@ img {
   }
 
   /* Hero */
-  .hero {
-    padding: 56px 0 64px;
-    min-height: auto;
-  }
-
-  .hero__inner {
-    gap: 32px;
+  .hero__title {
+    font-size: clamp(36px, min(12.5vw, 9svh), 64px);
   }
 
   .hero__description {

@@ -17,11 +17,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'audiovibe | Mert Çoban',
-  description: 'Music technology by Mert Çoban: audio plugins and a Yamaha CL5 console simulator, built with AI.',
+  title: 'audiovibe',
+  description: 'Music technology by Mert: audio plugins and a Yamaha CL5 console simulator, built with AI.',
   openGraph: {
     title: 'audiovibe',
-    description: 'Music technology by Mert Çoban: audio plugins and a Yamaha CL5 console simulator.',
+    description: 'Music technology by Mert: audio plugins and a Yamaha CL5 console simulator.',
     type: 'website',
   },
 }

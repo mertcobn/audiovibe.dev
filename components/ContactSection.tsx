@@ -5,7 +5,6 @@ export default function ContactSection() {
     <section className="section" id="contact">
       <div className="container">
         <div className="section__header">
-          <p className="section__label">get in touch</p>
           <h2 className="section__title">Contact</h2>
         </div>
 
