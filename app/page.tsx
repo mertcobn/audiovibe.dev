@@ -1,8 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import SectionDivider from '@/components/SectionDivider'
-import PluginsSection from '@/components/PluginsSection'
+import ProjectsSection from '@/components/ProjectsSection'
 import AboutSection from '@/components/AboutSection'
+import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -12,9 +13,11 @@ export default function Home() {
       <main>
         <Hero />
         <SectionDivider />
-        <PluginsSection />
+        <ProjectsSection />
         <SectionDivider />
         <AboutSection />
+        <SectionDivider />
+        <ContactSection />
       </main>
       <Footer />
     </>

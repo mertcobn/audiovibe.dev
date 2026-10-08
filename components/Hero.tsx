@@ -1,30 +1,32 @@
+import { contact } from '@/data/contact'
+
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container">
         <div className="hero__inner">
-          <p className="hero__eyebrow">audiovibe audio plugins</p>
+          <p className="hero__eyebrow">{contact.name} · music technology</p>
 
           <h1 className="hero__title">
-            Tools for
+            Music
             <br />
-            <em>modern</em>
+            <em>tech</em>
             <br />
-            production
+            vibe coded
           </h1>
 
           <p className="hero__description">
-            A curated collection of precision audio plugins, built for producers
-            who care about quality. Free, open, and always improving.
+            Audio plugins, tools and simulators for people who make and mix sound.
+            Designed by {contact.name}, built together with AI.
           </p>
 
+          {/* Ziyaretçi buradan ya plugin'lere ya CL5 simülatörüne gider */}
           <div className="hero__actions">
-            <a href="#plugins" className="btn">
-              Explore Plugins
+            <a href="/plugins" className="btn">
+              Plugins
             </a>
-            {/* Patreon linki hazır olduğunda aşağıdaki href'i güncelle */}
-            <a href="#" className="btn btn--ghost">
-              Support on Patreon →
+            <a href="/cl5" className="btn">
+              Yamaha CL5
             </a>
           </div>
         </div>

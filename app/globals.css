@@ -156,18 +156,6 @@ img {
   color: var(--text);
 }
 
-.navbar__link--support {
-  border: 1px solid var(--btn-border);
-  padding: 6px 14px;
-  border-radius: 3px;
-  transition: all var(--transition);
-}
-
-.navbar__link--support:hover {
-  color: var(--text);
-  border-color: var(--btn-border-hover);
-}
-
 /* ============ HAMBURGER BUTONU ============ */
 
 .nav-hamburger {
@@ -337,13 +325,6 @@ img {
   color: var(--text);
 }
 
-.btn--sm {
-  height: 44px;
-  padding: 0 18px;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-}
-
 /* ============ SECTION DIVIDER ============ */
 
 .section-divider__line {
@@ -468,25 +449,12 @@ img {
   gap: 6px;
 }
 
-.plugin-card__name-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
 .plugin-card__name {
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text);
-}
-
-.plugin-card__version {
-  font-size: 10px;
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  color: var(--text-secondary);
 }
 
 .plugin-card__tagline {
@@ -537,12 +505,6 @@ img {
   border-top: 1px solid var(--border);
 }
 
-.plugin-card__meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .plugin-card__price {
   font-size: 10px;
   font-weight: 300;
@@ -555,23 +517,83 @@ img {
   color: var(--text);
 }
 
-.badge {
-  font-size: 8px;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border: 1px solid var(--btn-border);
-  padding: 3px 8px;
-  border-radius: 2px;
-  color: var(--text-secondary);
-}
-
 .plugin-card__soon {
   font-size: 9px;
   font-weight: 300;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-secondary);
+}
+
+/* ============ PROJECTS (ana sayfa kartları) ============ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--card-border-hover);
+}
+
+.project-card__label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-card__name {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.project-card__description {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  flex: 1;
+}
+
+.project-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.project-card__note,
+.project-card__cta {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.project-card:hover .project-card__cta {
+  color: var(--text);
 }
 
 /* ============ ABOUT ============ */
@@ -596,11 +618,45 @@ img {
   font-weight: 300;
 }
 
-.about__links {
+/* ============ CONTACT ============ */
+
+.contact__links {
   display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  border-top: 1px solid var(--border);
+}
+
+.contact__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   gap: 24px;
-  align-items: center;
-  flex-wrap: wrap;
+  min-height: 64px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact__kind {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.contact__value {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.contact__link:hover .contact__value {
+  color: var(--text);
 }
 
 /* ============ FOOTER ============ */
@@ -675,6 +731,10 @@ img {
 
   .plugins-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -751,6 +811,11 @@ img {
     gap: 20px;
   }
 
+  /* Proje kartları */
+  .project-card {
+    padding: 28px 24px;
+  }
+
   /* Footer */
   .footer__inner {
     flex-direction: column;
@@ -759,7 +824,8 @@ img {
   }
 
   .footer__links {
-    gap: 24px;
+    gap: 8px 24px;
+    flex-wrap: wrap;
   }
 }
 

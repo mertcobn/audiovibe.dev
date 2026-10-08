@@ -1,3 +1,5 @@
+import { contact } from '@/data/contact'
+
 export default function AboutSection() {
   return (
     <section className="section" id="about">
@@ -9,24 +11,15 @@ export default function AboutSection() {
 
         <div className="about__content">
           <p className="about__text">
-            <strong>audiovibe</strong> is a one-person project dedicated to building
-            precision audio tools for modern producers. Every plugin is designed with
-            a clear purpose, no bloat, no unnecessary complexity.
+            I&apos;m <strong>{contact.name}</strong>. I build music technology: audio
+            plugins, tools and simulators for people who produce and mix sound.
           </p>
 
           <p className="about__text">
-            Background in music production and audio engineering. All plugins are{' '}
-            <strong>free unless stated otherwise</strong>. If you find them useful,
-            consider supporting the project through Patreon.
+            Most of it is made together with AI, a way of working often called vibe
+            coding. That is where the name comes from: <strong>audio</strong> +{' '}
+            <strong>vibe</strong> coding.
           </p>
-
-          {/* Sosyal linkler buraya eklenebilir */}
-          <div className="about__links">
-            <a href="#" className="btn">
-              Support on Patreon
-            </a>
-            {/* <a href="https://instagram.com/..." className="btn btn--ghost" target="_blank" rel="noopener noreferrer">Instagram →</a> */}
-          </div>
         </div>
       </div>
     </section>

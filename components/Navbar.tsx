@@ -2,6 +2,15 @@
 
 import { useState, useEffect } from 'react'
 
+// Menü linkleri — masaüstü ve mobil menü aynı listeyi kullanır.
+// /cl5 ayrı bir projeye rewrite ediliyor (next.config.ts), bu yüzden düz <a> ile açılır.
+const links = [
+  { href: '/plugins', label: 'Plugins' },
+  { href: '/cl5', label: 'Yamaha CL5' },
+  { href: '/#about', label: 'About' },
+  { href: '/#contact', label: 'Contact' },
+]
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -23,25 +32,11 @@ export default function Navbar() {
 
         {/* Desktop nav — 641px ve üstünde görünür */}
         <ul className="navbar__nav">
-          <li>
-            <a href="#plugins" className="navbar__link">Plugins</a>
-          </li>
-          <li>
-            <a href="#about" className="navbar__link">About</a>
-          </li>
-          <li>
-            <a href="/cl5" className="navbar__link">Yamaha CL5</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="navbar__link navbar__link--support"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Support
-            </a>
-          </li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="navbar__link">{link.label}</a>
+            </li>
+          ))}
         </ul>
 
         {/* Hamburger butonu — sadece mobilde */}
@@ -60,32 +55,13 @@ export default function Navbar() {
       {isOpen && (
         <div className="navbar__mobile-nav">
           <ul>
-            <li>
-              <a href="#plugins" className="navbar__mobile-link" onClick={closeMenu}>
-                Plugins
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="navbar__mobile-link" onClick={closeMenu}>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/cl5" className="navbar__mobile-link" onClick={closeMenu}>
-                Yamaha CL5
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="navbar__mobile-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-              >
-                Support on Patreon
-              </a>
-            </li>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="navbar__mobile-link" onClick={closeMenu}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
