@@ -5,6 +5,9 @@ Bir sonraki oturum için durum notu. En yeni oturum en üstte.
 ## Site yapısı (şu an)
 
 - `/` — ana sayfa: Hero (Plugins / Yamaha CL5 butonları), Work (iki proje kartı), About, Contact, Footer.
+  Hero her ekran boyutunda tek ekrana sığar (başlık ve boşluklar `svh` ile ekran yüksekliğine göre küçülür).
+- Sitede sadece ad geçer ("Mert"), soyad yok. Sekme başlığı her sayfada sadece "audiovibe".
+- Mert sade istiyor: süs etiketleri (eyebrow, "the maker" gibi küçük başlık üstü yazılar) kaldırıldı, geri ekleme.
 - `/plugins` — plugin kataloğu (`app/plugins/page.tsx`). Hepsi "Coming Soon", indirme linki yok.
 - `/cl5` — ayrı proje (github.com/mertcobn/CL5_Web, Vercel: cl5web.vercel.app), `next.config.ts` rewrite'larıyla geçiriliyor. Rewrite'lara ve `/cl5` adresine dokunma.
 - Menü linkleri tek listede: `components/Navbar.tsx` içindeki `links` (masaüstü + mobil aynı liste).
@@ -23,6 +26,11 @@ Bir sonraki oturum için durum notu. En yeni oturum en üstte.
 - Süreç öldürürken aynı komutta `next start` geçen bir `pgrep -f` kullanma; kendi kabuğunu öldürür. PID'i ayrı komutla bul.
 
 ## Oturum geçmişi
+
+### 2026-10-08 — dönüşüm 2 (PR #3 birleşti, canlıda görüldü)
+- Soyad kaldırıldı; sekme başlıkları sadece "audiovibe".
+- Hero tek ekrana sığacak şekilde ölçeklendi (1000×510'dan 2560×1300'e, mobil 320×480'den 430×840'a ölçülerek test edildi).
+- "Mert · music technology" ve diğer küçük süs etiketleri kaldırıldı; hero açıklaması kısaltıldı.
 
 ### 2026-10-08 — dönüşüm 1
 - Tüm plugin'ler "Coming Soon" yapıldı, indirme linkleri silindi.

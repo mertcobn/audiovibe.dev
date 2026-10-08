@@ -1,12 +1,8 @@
-import { contact } from '@/data/contact'
-
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container">
         <div className="hero__inner">
-          <p className="hero__eyebrow">{contact.name} · music technology</p>
-
           <h1 className="hero__title">
             Music
             <br />
@@ -16,8 +12,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__description">
-            Audio plugins, tools and simulators for people who make and mix sound.
-            Designed by {contact.name}, built together with AI.
+            Audio plugins and tools for people who make and mix sound.
           </p>
 
           {/* Ziyaretçi buradan ya plugin'lere ya CL5 simülatörüne gider */}

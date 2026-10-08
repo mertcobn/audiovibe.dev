@@ -3,7 +3,6 @@
 const projects = [
   {
     href: '/plugins',
-    label: 'audio plugins',
     name: 'Plugins',
     description:
       'Small, focused VST3 / AU plugins for macOS and Windows: gain, formant shifting, saturation and compression. All free.',
@@ -12,7 +11,6 @@ const projects = [
   },
   {
     href: '/cl5',
-    label: 'console simulator',
     name: 'Yamaha CL5',
     description:
       'A browser-based simulator of the Yamaha CL5 digital mixing console, for learning and practising the desk without the hardware.',
@@ -26,14 +24,12 @@ export default function ProjectsSection() {
     <section className="section" id="projects">
       <div className="container">
         <div className="section__header">
-          <p className="section__label">projects</p>
           <h2 className="section__title">Work</h2>
         </div>
 
         <div className="projects-grid">
           {projects.map((project) => (
             <a key={project.href} href={project.href} className="project-card">
-              <p className="project-card__label">{project.label}</p>
               <h3 className="project-card__name">{project.name}</h3>
               <p className="project-card__description">{project.description}</p>
               <div className="project-card__footer">
