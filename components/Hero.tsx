@@ -6,7 +6,7 @@ export default function Hero() {
           <h1 className="hero__title">
             Music
             <br />
-            <em>tech</em>
+            tech
             <br />
             vibe coded
           </h1>
