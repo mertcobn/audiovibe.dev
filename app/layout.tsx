@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'audiovibe',
-  description: 'Music technology by Mert: audio plugins and a Yamaha CL5 console simulator, built with AI.',
+  description: 'Music technology by Mert: audio plugins and a Yamaha CL5 console simulator.',
   openGraph: {
     title: 'audiovibe',
     description: 'Music technology by Mert: audio plugins and a Yamaha CL5 console simulator.',

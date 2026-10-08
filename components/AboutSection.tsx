@@ -13,12 +13,6 @@ export default function AboutSection() {
             I&apos;m <strong>{contact.name}</strong>. I build music technology: audio
             plugins, tools and simulators for people who produce and mix sound.
           </p>
-
-          <p className="about__text">
-            Most of it is made together with AI, a way of working often called vibe
-            coding. That is where the name comes from: <strong>audio</strong> +{' '}
-            <strong>vibe</strong> coding.
-          </p>
         </div>
       </div>
     </section>
