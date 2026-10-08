@@ -30,6 +30,9 @@ export default function Navbar() {
             <a href="#about" className="navbar__link">About</a>
           </li>
           <li>
+            <a href="/cl5" className="navbar__link">Yamaha CL5</a>
+          </li>
+          <li>
             <a
               href="#"
               className="navbar__link navbar__link--support"
@@ -65,6 +68,11 @@ export default function Navbar() {
             <li>
               <a href="#about" className="navbar__mobile-link" onClick={closeMenu}>
                 About
+              </a>
+            </li>
+            <li>
+              <a href="/cl5" className="navbar__mobile-link" onClick={closeMenu}>
+                Yamaha CL5
               </a>
             </li>
             <li>
